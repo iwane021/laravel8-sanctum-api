@@ -1,5 +1,7 @@
 <?php
 
+use App\Actions\Authentication\UpdateUserPasswordAction;
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::put('auth/password', UpdateUserPasswordAction::class)->middleware('auth');
+
+Route::get('/category', [CategoryController::class, 'index'])->name('category.index');

@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 // Public Routes
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
-Route::get('/products', [ProductsController::class, 'index']);
+Route::get('/products', [ProductsController::class, 'index'])->name('products.index');
 Route::get('/products/{id}', [ProductsController::class, 'show']);
 Route::get('/products/search/params', [ProductsController::class, 'searchparam']);
 Route::get('/products/search/{name}', [ProductsController::class, 'search']);
